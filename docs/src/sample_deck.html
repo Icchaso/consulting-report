@@ -1,0 +1,54 @@
+<!-- README 用：広告運用レポート（pptx）のサンプルページ一覧。画像は ../images/slides/ の実物描画 -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 22px; }
+  .head .lead { max-width: 560px; }
+  .badges { display: grid; grid-template-columns: repeat(2, auto); gap: 8px; flex-shrink: 0; }
+  .badge { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px; text-align: left; min-width: 150px; }
+  .badge b { display: block; font-size: 19px; color: var(--navy); line-height: 1.2; font-weight: 800; }
+  .badge span { font-size: 11px; color: var(--sub); }
+  .badge.ok b { color: var(--sort-ink); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  figure { margin: 0; }
+  figure img { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 2px 10px rgba(27,36,56,.10); }
+  figcaption { margin-top: 7px; font-size: 13px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  figcaption .no { display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent); margin-right: 6px; }
+  figcaption .sub { color: var(--sub); }
+  figure.warn figcaption b { background: linear-gradient(transparent 55%, #ffe58a 55%); }
+</style>
+
+<div class="head">
+  <div>
+    <div class="eyebrow">SAMPLE ／ 架空のクライアント「サンプル商事」</div>
+    <h1>広告運用レポート（自動生成・82枚）</h1>
+    <p class="lead">広告マネージャのCSVを置いて <b>/ad-report</b> と打つだけ。<br>数字はプログラムが計算し、グラフはPowerPointで編集できる。</p>
+  </div>
+  <div class="badges">
+    <div class="badge"><b>82枚</b><span>スライド総数</span></div>
+    <div class="badge"><b>107個</b><span>グラフ（PowerPointで編集可）</span></div>
+    <div class="badge"><b>40 / 53枠</b><span>所見を書いた枠（残りは要確認）</span></div>
+    <div class="badge ok"><b>0件</b><span>検査エラー（check_deck.py）</span></div>
+  </div>
+</div>
+
+<div class="grid">
+  <figure><img src="../images/slides/01_表紙.png" alt="表紙">
+    <figcaption><span class="no">p.1</span><b>表紙</b><span class="sub">：対象期間と数値の出どころを明記</span></figcaption></figure>
+  <figure><img src="../images/slides/02_サマリー.png" alt="エグゼクティブサマリー">
+    <figcaption><span class="no">p.4</span><b>エグゼクティブサマリー</b><span class="sub">：主要KPIと所見</span></figcaption></figure>
+  <figure><img src="../images/slides/03_前月比較.png" alt="前月比較">
+    <figcaption><span class="no">p.6</span><b>前月比較</b><span class="sub">：13指標の差分・増減率・評価</span></figcaption></figure>
+  <figure><img src="../images/slides/04_キャンペーン別.png" alt="キャンペーン別">
+    <figcaption><span class="no">p.19</span><b>キャンペーン別</b><span class="sub">：KPIと広告セット別の内訳</span></figcaption></figure>
+  <figure><img src="../images/slides/05_キャンペーン日別推移.png" alt="キャンペーン日別推移">
+    <figcaption><span class="no">p.20</span><b>日別推移</b><span class="sub">：消化金額・CV・CPA（編集できるグラフ）</span></figcaption></figure>
+  <figure><img src="../images/slides/06_広告クリエイティブ.png" alt="広告別">
+    <figcaption><span class="no">p.36</span><b>広告（クリエイティブ）別</b><span class="sub">：1本ごとにKPIと日別グラフ</span></figcaption></figure>
+  <figure><img src="../images/slides/07_年齢性別.png" alt="年齢×性別">
+    <figcaption><span class="no">p.66</span><b>年齢×性別</b><span class="sub">：層ごとの消化金額とCPA</span></figcaption></figure>
+  <figure class="warn"><img src="../images/slides/08_所見要確認.png" alt="所見：要確認">
+    <figcaption><span class="no">p.54</span><b>所見：要確認</b><span class="sub">＝根拠が無い所はAIが書かない</span></figcaption></figure>
+</div>
+
+<p class="foot">画像は実際に生成された pptx を macOS の Quick Look で描画したもの（フォントは Mac の游ゴシック体で表示）。数値はすべて架空データ。</p>

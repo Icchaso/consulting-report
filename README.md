@@ -9,27 +9,49 @@
 
 ---
 
-## できること
+## 全体像
+
+![全体像：記録と広告データを置くだけで、報告資料の下書きが揃う](docs/images/overview.png)
+
+## 何をしたら、どうなる？
+
+![1か月の流れ：あなたがやること → ツールが自動でやること → できるもの](docs/images/flow.png)
+
+## できあがる資料のサンプル
+
+架空のクライアント「サンプル商事」の9月分を、実際にツールに通して作ったものです（文章・数字は生成物からそのまま引用）。
+
+### 広告運用レポート（PowerPoint）
+
+![広告運用レポートのサンプルページ](docs/images/sample_deck.png)
+
+実物: [サンプル商事_2026-09_広告運用レポート.pptx](consulting-vault/01_clients/サンプル商事/2026-09/ads/サンプル商事_2026-09_広告運用レポート.pptx)（ダウンロードして PowerPoint で開けます）
+
+### 議事録
+
+![元の文字起こしと、自動でできた議事録の見比べ](docs/images/sample_minutes.png)
+
+実物: [2026-09-03_月次定例.md](consulting-vault/01_clients/サンプル商事/2026-09/minutes/2026-09-03_月次定例.md) ／ 元の記録: [文字起こし](consulting-vault/01_clients/サンプル商事/raw/2026-09-03_meeting_サンプル商事_月次定例.md)
+
+### 月次レポート
+
+![月次レポートの見本](docs/images/sample_report.png)
+
+実物: [report.md](consulting-vault/01_clients/サンプル商事/2026-09/report.md) ／ [稼働ログ](consulting-vault/01_clients/サンプル商事/2026-09/worklog.md)
+
+## どんな成果が上がる？
+
+![どんな成果が上がるか](docs/images/outcomes.png)
+
+---
+
+## できること（コマンド早見表）
 
 | 入れるもの | 出てくるもの | 使うコマンド |
 |---|---|---|
 | 会議の文字起こし（`.md` / `.txt`）、Slack のエクスポート、一行メモ | クライアント別に仕分けた記録（`raw/`） | `python3 03_scripts/inbox_sort.py` |
 | 仕分けた記録 | 稼働ログ・議事録・提案書・Q&A・月次レポート（Markdown） | Claude Code で `/monthly` |
 | 広告マネージャの CSV（広告×日別、年齢性別・配置・デバイス・地域の内訳） | 広告運用レポート（`.pptx`、PowerPoint で編集できるグラフ付き） | Claude Code で `/ad-report <クライアント名>` |
-
-### 流れ
-
-```mermaid
-flowchart LR
-  A[録音・チャット・メモ] --> B[00_inbox に置く]
-  B -->|inbox_sort.py| C[01_clients/◯◯/raw]
-  C -->|/monthly| D[議事録・提案書・Q&A・月次レポート]
-  E[広告マネージャの CSV] --> F[01_clients/◯◯/ads/YYYY-MM]
-  F -->|/ad-report| G[広告運用レポート .pptx]
-  D -->|次月施策の根拠| G
-```
-
-人がやるのは「記録を置く」「週1でエクスポートを入れる」「月初にレビューして送る」の3つだけです。
 
 ---
 
@@ -105,6 +127,7 @@ consulting-report/
 ├── HANDOFF.md                    ← 開発の現状と次にやること
 ├── コンサル業務記録ツール_設計書/   ← 設計書（図解PDF・詳細版）
 ├── 開発メモ/データ契約.md          ← スクリプト同士の約束（ファイル名・データの形）
+├── docs/                         ← README の図（src/＝元のHTML、images/＝画像）
 └── consulting-vault/             ← ツール本体（Obsidian の vault として開く）
     ├── CLAUDE.md                 ← AI へのルール（書いてよいこと・禁止事項）
     ├── README.md                 ← 利用者向けの使い方
@@ -133,6 +156,13 @@ cd consulting-vault
 python3 -m unittest discover -s 03_scripts/tests              # 記録系（56件）
 python3 -m unittest discover -s 03_scripts/ad_report/tests    # 広告レポート（26件。python-pptx が必要）
 ```
+
+### README の図を直すとき
+図は `docs/src/*.html`（共通の色・文字は `docs/src/style.css`）で作り、画像にして `docs/images/` に置いています。
+```bash
+docs/src/html2png.sh docs/src/overview.html docs/images/overview.png 1000 770 2   # 幅1000・高さ770・2倍の解像度
+```
+Google Chrome が必要です。文章や数字を変えるときは、実際の生成物と食い違わないようにしてください。
 
 ### 現状と今後
 進み具合と次にやることは [HANDOFF.md](HANDOFF.md) にまとめています。主な予定:

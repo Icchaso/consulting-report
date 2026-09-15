@@ -1,0 +1,114 @@
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  .grid { display: grid; grid-template-columns: 196px 20px minmax(0,1fr) 20px 216px; gap: 14px 0; margin-top: 22px; align-items: stretch; }
+  .colhead { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--sub); padding: 0 2px 2px; }
+  .colhead.c { text-align: center; }
+  .box { border: 1.5px solid; border-radius: 12px; padding: 12px 12px; display: flex; flex-direction: column; gap: 7px; justify-content: center; }
+  .in  { background: var(--in-bg);  border-color: var(--in-bd); }
+  .out { background: var(--out-bg); border-color: var(--out-bd); }
+  .item { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 8px; padding: 7px 9px; font-size: 13px; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+  .item .ic { font-size: 17px; width: 22px; text-align: center; }
+  .item small { display: block; font-weight: 500; color: var(--sub); font-size: 11px; line-height: 1.35; }
+  .item.big { border: 1.5px solid var(--out-bd); }
+  .arrow { display: flex; align-items: center; justify-content: center; color: #9aa3b2; font-size: 22px; font-weight: 700; }
+  .engine { background: var(--panel); border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: center; }
+  .lane-title { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 9px; display: flex; align-items: center; gap: 8px; }
+  .steps { display: flex; align-items: stretch; gap: 4px; }
+  .step { flex: 1 1 0; min-width: 0; border-radius: 10px; padding: 8px 5px 9px; font-size: 12.5px; font-weight: 700; text-align: center; border: 1.5px solid; display: flex; flex-direction: column; justify-content: center; gap: 3px; }
+  .step small { font-weight: 500; font-size: 10.5px; color: var(--sub); line-height: 1.35; }
+  .step code { font-family: "SF Mono", Menlo, monospace; font-size: 9px; white-space: nowrap; letter-spacing: -.02em; color: var(--sub); font-weight: 500; }
+  .auto { background: var(--sort-bg); border-color: var(--sort-bd); color: var(--sort-ink); }
+  .ai   { background: var(--ai-bg);   border-color: var(--ai-bd);   color: var(--ai-ink); }
+  .chk  { background: #fff; border-color: var(--line); color: var(--ink); }
+  .sa { align-self: center; color: #b3bac6; font-size: 11px; flex: none; }
+  .legend { display: flex; gap: 14px; justify-content: flex-end; font-size: 11.5px; color: var(--sub); margin-top: 8px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .dot { width: 11px; height: 11px; border-radius: 3px; border: 1.5px solid; display: inline-block; }
+  .human { margin-top: 22px; display: grid; grid-template-columns: 150px 1fr 1fr 1fr; gap: 10px; align-items: stretch; }
+  .human .label { background: var(--hum-bg); color: var(--hum-ink); border-radius: 12px; font-weight: 800; font-size: 14px; display: flex; flex-direction: column; justify-content: center; padding: 10px 14px; line-height: 1.35; }
+  .human .label small { font-weight: 600; font-size: 11.5px; opacity: .85; }
+  .h { border: 1.5px solid #f2c2c4; border-radius: 12px; padding: 10px 14px; background: #fff; }
+  .h b { color: var(--hum-ink); font-size: 18px; margin-right: 6px; }
+  .h .t { font-weight: 700; font-size: 14px; }
+  .h small { display: block; color: var(--sub); font-size: 11.5px; margin-top: 2px; }
+  .rule { margin-top: 18px; background: var(--navy); color: #fff; border-radius: 12px; padding: 13px 18px; display: flex; gap: 22px; align-items: center; }
+  .rule .k { font-weight: 800; font-size: 14px; white-space: nowrap; }
+  .rule .v { font-size: 13px; opacity: .95; }
+  .rule .v b { color: #ffe08a; }
+</style>
+
+<div class="eyebrow">OVERVIEW</div>
+<h1>全体像：記録と広告データを置くだけで、報告資料の下書きが揃う</h1>
+<p class="lead">左の「記録」を入れると、ツールが仕分け・集計し、AI が文章を書き、最後に機械的に検査して、右の資料ができあがります。</p>
+
+<div class="grid">
+  <div class="colhead">入れるもの</div><div></div>
+  <div class="colhead c">ツールの中で起きること</div><div></div>
+  <div class="colhead">出てくるもの</div>
+
+  <!-- 記録の流れ -->
+  <div class="box in">
+    <div class="item"><span class="ic">🎙️</span><div>会議の録音<small>文字起こしを置く</small></div></div>
+    <div class="item"><span class="ic">💬</span><div>Slack・LINE<small>週1でエクスポート</small></div></div>
+    <div class="item"><span class="ic">📝</span><div>電話・思いつき<small>一行メモ</small></div></div>
+  </div>
+  <div class="arrow">›</div>
+  <div class="engine">
+    <div class="lane-title">① 業務の記録 → 報告書</div>
+    <div class="steps">
+      <div class="step auto">仕分け<small>クライアント別に振り分け</small><code>inbox_sort.py</code></div>
+      <div class="sa">▶</div>
+      <div class="step auto">稼働の集計<small>何に何分かを推定</small><code>worklog.py</code></div>
+      <div class="sa">▶</div>
+      <div class="step ai">資料を書く<small>記録にある事だけ</small><code>/monthly</code></div>
+      <div class="sa">▶</div>
+      <div class="step chk">出典チェック<small>根拠の実在を検査</small><code>check_sources.py</code></div>
+    </div>
+  </div>
+  <div class="arrow">›</div>
+  <div class="box out">
+    <div class="item"><span class="ic">🗒️</span><div>議事録<small>会議ごと・発言の時刻つき</small></div></div>
+    <div class="item"><span class="ic">💡</span><div>提案書・Q&amp;A記録<small>口頭の提案やチャット相談を文書に</small></div></div>
+    <div class="item"><span class="ic">⏱️</span><div>稼働ログ・月次報告<small>1か月の活動をまとめて報告</small></div></div>
+  </div>
+
+  <!-- 広告の流れ -->
+  <div class="box in">
+    <div class="item"><span class="ic">📊</span><div>広告マネージャの CSV<small>広告×日別、年齢・配置などの内訳</small></div></div>
+  </div>
+  <div class="arrow">›</div>
+  <div class="engine">
+    <div class="lane-title">② 広告データ → PowerPoint</div>
+    <div class="steps">
+      <div class="step auto">数字を計算<small>CPA・ROAS・前月比など</small><code>ad_analyze.py</code></div>
+      <div class="sa">▶</div>
+      <div class="step ai">所見を書く<small>数字は書かない</small><code>/ad-report</code></div>
+      <div class="sa">▶</div>
+      <div class="step auto">パワポを組む<small>編集できるグラフ</small><code>build_deck.py</code></div>
+      <div class="sa">▶</div>
+      <div class="step chk">検査<small>数字の混入を検出</small><code>check_deck.py</code></div>
+    </div>
+  </div>
+  <div class="arrow">›</div>
+  <div class="box out">
+    <div class="item big"><span class="ic">📑</span><div>広告運用レポート<small>PowerPoint 60〜90枚<br>（サンプルは82枚）</small></div></div>
+  </div>
+</div>
+<div class="legend">
+  <span><i class="dot" style="background:var(--sort-bg);border-color:var(--sort-bd)"></i>プログラムが自動で処理</span>
+  <span><i class="dot" style="background:var(--ai-bg);border-color:var(--ai-bd)"></i>AI（Claude Code）が文章を書く</span>
+  <span><i class="dot" style="background:#fff;border-color:var(--line)"></i>機械的な検査</span>
+</div>
+
+<div class="human">
+  <div class="label">人がやるのは<br>3つだけ<small>それ以外は自動</small></div>
+  <div class="h"><b>1</b><span class="t">記録を入口に置く</span><small>会議のあと、文字起こしを 00_inbox へ</small></div>
+  <div class="h"><b>2</b><span class="t">週1でデータを入れる</span><small>Slack・LINE のエクスポート、月1で広告CSV</small></div>
+  <div class="h"><b>3</b><span class="t">月初にレビューして送る</span><small>「要確認」を元の記録で確かめる</small></div>
+</div>
+
+<div class="rule">
+  <div class="k">大原則</div>
+  <div class="v">記録に遡れないことは書かない。<b>数字はプログラム、文章は AI</b>。根拠が無い所は作文せず<b>「要確認」</b>のまま残す。</div>
+</div>

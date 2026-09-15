@@ -1,0 +1,37 @@
+/* README 用の図・資料サンプル画像の共通スタイル。
+   画像は CSS 幅 1000px を倍率2で書き出す（GitHub 上で約900pxに縮小表示されても文字がくっきり見える）。 */
+:root {
+  --ink: #1b2438;        /* 本文 */
+  --sub: #5b6475;        /* 補足 */
+  --line: #e3e6ec;       /* 罫線 */
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --navy: #1f3a68;       /* 見出し・パワポと同じ紺 */
+  --accent: #2e75b6;     /* 強調の青 */
+  /* 段階ごとの色（設計書の図解版と同じ系統） */
+  --in-bg: #eef4ff;  --in-bd: #b9cff7;  --in-ink: #1d4fa3;   /* 入口 */
+  --sort-bg: #ecfbf1; --sort-bd: #a5e0bb; --sort-ink: #17703f; /* 仕分け・集計 */
+  --gen-bg: #fff9e6; --gen-bd: #f1d27a; --gen-ink: #8a5a00;  /* 生成 */
+  --out-bg: #fff0f5; --out-bd: #f3b6ca; --out-ink: #a3234f;  /* 成果物 */
+  --hum-bg: #fdecec; --hum-ink: #c7353a;                     /* 人の作業 */
+  --ai-bg: #f3f0ff;  --ai-bd: #cdc3f5;  --ai-ink: #5b3fc4;   /* AI */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); }
+body {
+  width: 1000px;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding: 36px 40px 40px;
+}
+.eyebrow { font-size: 12px; letter-spacing: .14em; color: var(--sub); font-weight: 600; }
+h1 { font-size: 26px; font-weight: 800; color: var(--navy); margin: 4px 0 6px; letter-spacing: .01em; }
+.lead { color: var(--sub); font-size: 14px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.tag.hum { background: var(--hum-bg); color: var(--hum-ink); }
+.tag.auto { background: var(--sort-bg); color: var(--sort-ink); }
+.tag.ai { background: var(--ai-bg); color: var(--ai-ink); }
+.foot { margin-top: 18px; font-size: 12px; color: var(--sub); }

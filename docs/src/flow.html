@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  .head { display: grid; grid-template-columns: 128px 1fr 24px 1fr 24px 1fr; margin-top: 22px; gap: 0 8px; }
+  .head div { font-size: 12px; font-weight: 800; letter-spacing: .1em; padding: 0 4px 6px; background: none; border: none; }
+  .head .you { color: var(--hum-ink); } .head .tool { color: var(--sort-ink); } .head .get { color: var(--out-ink); }
+  .rows { position: relative; }
+  .rows::before { content: ""; position: absolute; left: 20px; top: 14px; bottom: 14px; width: 2px; background: #d9dee7; }
+  .row { display: grid; grid-template-columns: 128px 1fr 24px 1fr 24px 1fr; gap: 0 8px; align-items: stretch; margin-bottom: 12px; position: relative; }
+  .when { display: flex; align-items: flex-start; gap: 10px; padding-top: 10px; }
+  .when .dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--navy); margin-left: 14px; flex: none; position: relative; z-index: 1; margin-top: 3px; }
+  .when .t { font-weight: 800; font-size: 13.5px; color: var(--navy); line-height: 1.3; }
+  .when .t small { display: block; font-weight: 600; font-size: 11px; color: var(--sub); }
+  .card { border-radius: 12px; padding: 11px 13px; border: 1.5px solid; font-size: 13px; line-height: 1.5; }
+  .card b { display: block; font-size: 14px; margin-bottom: 3px; }
+  .card code { font-family: "SF Mono", Menlo, monospace; font-size: 11px; background: rgba(255,255,255,.8); border-radius: 4px; padding: 1px 5px; color: var(--ink); }
+  .card .eg { display: block; margin-top: 5px; font-size: 11px; color: var(--sub); }
+  .you  { background: #fff; border-color: #f2c2c4; }
+  .you b { color: var(--hum-ink); }
+  .tool { background: var(--sort-bg); border-color: var(--sort-bd); }
+  .tool b { color: var(--sort-ink); }
+  .tool.ai { background: var(--ai-bg); border-color: var(--ai-bd); }
+  .tool.ai b { color: var(--ai-ink); }
+  .get  { background: var(--out-bg); border-color: var(--out-bd); }
+  .get b { color: var(--out-ink); }
+  .get ul { list-style: none; }
+  .get li::before { content: "✓ "; color: var(--out-ink); font-weight: 800; }
+  .ar { display: flex; align-items: center; justify-content: center; color: #9aa3b2; font-size: 18px; font-weight: 800; }
+  .row.key .card { box-shadow: 0 6px 18px rgba(31,58,104,.10); }
+  .row.key .when .dot { background: var(--navy); }
+  .note { margin-top: 6px; display: flex; gap: 10px; }
+  .note div { flex: 1; background: var(--panel); border-radius: 10px; padding: 9px 12px; font-size: 12px; color: var(--sub); }
+  .note b { color: var(--ink); }
+</style>
+
+<div class="eyebrow">MONTHLY FLOW</div>
+<h1>何をしたら、どうなる？ ── 1か月の流れ</h1>
+<p class="lead">あなたがやるのは左の赤い枠だけ。真ん中はツールが自動で進め、右の成果物が手元に残ります。</p>
+
+<div class="head">
+  <div></div><div class="you">あなたがやること</div><div></div><div class="tool">ツールが自動でやること</div><div></div><div class="get">できるもの</div>
+</div>
+
+<div class="rows">
+  <div class="row">
+    <div class="when"><i class="dot"></i><div class="t">会議のあと<small>毎回・1分</small></div></div>
+    <div class="card you"><b>文字起こしを入口に置く</b>ファイルを <code>00_inbox</code> フォルダへ。名前は「日付_種別_相手_件名」<span class="eg">例）2026-09-03_meeting_サンプル商事_月次定例.md</span></div>
+    <div class="ar">→</div>
+    <div class="card tool"><b>クライアント別に仕分け</b>名前から相手を判定して、そのクライアントの記録フォルダへ。判定できない物は入口に残して知らせる</div>
+    <div class="ar">→</div>
+    <div class="card get"><b>記録の束</b><ul><li>元の発言のまま保存（あとから書き換えない）</li><li>会議の長さも自動で記録</li></ul></div>
+  </div>
+
+  <div class="row">
+    <div class="when"><i class="dot"></i><div class="t">週1回<small>金曜など・5分</small></div></div>
+    <div class="card you"><b>チャットを書き出して置く</b>Slack・LINE のエクスポート、電話や思いつきの一行メモも <code>00_inbox</code> へ</div>
+    <div class="ar">→</div>
+    <div class="card tool"><b>読みやすく整えて仕分け</b>Slack は「1チャンネル1日1ファイル」に整形。発言者名・スレッドの返信も整理</div>
+    <div class="ar">→</div>
+    <div class="card get"><b>チャット相談の記録</b><ul><li>いつ誰と何を話したかが日付順に並ぶ</li></ul></div>
+  </div>
+
+  <div class="row key">
+    <div class="when"><i class="dot"></i><div class="t">月初<small>1日<br>コマンド2つ</small></div></div>
+    <div class="card you"><b>広告CSVを置いて、2つ打つ</b>広告マネージャの CSV を <code>ads/2026-09</code> へ。Claude Code で<br><code>/monthly</code> と <code>/ad-report 顧客名</code></div>
+    <div class="ar">→</div>
+    <div class="card tool ai"><b>集計して、書いて、検査する</b>稼働を集計 → 議事録・提案書・レポートを書く → 出典を検査。広告は数字を計算 → 所見を書く → パワポを組む → 検査</div>
+    <div class="ar">→</div>
+    <div class="card get"><b>報告資料の下書き一式</b><ul><li>議事録・提案書・Q&amp;A</li><li>稼働ログ・月次レポート</li><li>広告運用レポート（パワポ60〜90枚）</li></ul></div>
+  </div>
+
+  <div class="row">
+    <div class="when"><i class="dot"></i><div class="t">月初〜3日<small>レビュー</small></div></div>
+    <div class="card you"><b>見て直して、送る</b>「要確認」は元の記録を見て判断。確定版を <code>sent</code> に置いてクライアントへ</div>
+    <div class="ar">→</div>
+    <div class="card tool"><b>送った事実を記録</b>いつ・誰に・どのファイルを送ったかを追記（<code>send_log.py</code>）</div>
+    <div class="ar">→</div>
+    <div class="card get"><b>送付の記録</b><ul><li>何を納品したかが後から追える</li></ul></div>
+  </div>
+</div>
+
+<div class="note">
+  <div><b>「要確認」は失敗ではありません。</b>記録や根拠が無い所を、AI がそれらしい文章で埋めなかった印です。</div>
+  <div><b>最初の1か月は手動で十分。</b>「会議のたびに置く」「月初に打つ」の2つから始め、慣れたら定時実行を足します。</div>
+</div>

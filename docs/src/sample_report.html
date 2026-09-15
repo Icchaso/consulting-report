@@ -1,0 +1,126 @@
+<!-- README 用：/monthly が作った月次レポート（report.md）の見本。本文は 2026-09/report.md からの原文引用（途中まで） -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background: var(--bg); }
+  .wrap { display: grid; grid-template-columns: 1fr 292px; gap: 26px; margin-top: 20px; align-items: start; }
+  .desk { background: #eef1f6; border-radius: 14px; padding: 22px 24px 0; overflow: hidden; }
+  .paper { position: relative; background: #fff; border-radius: 4px 4px 0 0; box-shadow: 0 4px 18px rgba(27,36,56,.14); padding: 26px 30px 0; height: 1085px; overflow: hidden; }
+  .paper::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 140px; background: linear-gradient(rgba(255,255,255,0), #fff 80%); }
+  .paper .more { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; color: var(--sub); font-size: 13px; z-index: 1; letter-spacing: .3em; }
+  .paper .fname { font-size: 10.5px; color: var(--sub); font-family: "SF Mono", Menlo, monospace; margin-bottom: 10px; }
+  .paper h2 { font-size: 20px; font-weight: 800; color: var(--navy); padding-bottom: 8px; border-bottom: 2px solid var(--navy); margin-bottom: 14px; }
+  .paper h3 { font-size: 14.5px; font-weight: 800; color: var(--navy); margin: 18px 0 7px; padding-left: 9px; border-left: 4px solid var(--accent); line-height: 1.3; }
+  .paper p, .paper li { font-size: 12.5px; line-height: 1.65; }
+  .paper ul { padding-left: 18px; }
+  .paper ul ul { padding-left: 16px; margin: 1px 0 3px; color: var(--sub); }
+  .paper li { margin-bottom: 2px; }
+  .paper .mtg { font-size: 12.5px; font-weight: 700; margin: 8px 0 2px; }
+  table { border-collapse: collapse; font-size: 12px; margin: 8px 0 6px; min-width: 330px; }
+  th, td { border: 1px solid #d9dee7; padding: 3px 12px; text-align: left; }
+  th { background: #f2f5fa; color: var(--navy); font-weight: 700; }
+  td.n { text-align: right; }
+  tr.total td { font-weight: 700; }
+  .note { font-size: 11px !important; color: var(--sub); }
+  mark { background: linear-gradient(transparent 50%, #ffe27a 50%); color: inherit; font-weight: 700; }
+  /* 右：同じ月にできたファイル */
+  .side h2 { font-size: 13.5px; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+  .side .cap { font-size: 11.5px; color: var(--sub); margin-bottom: 10px; }
+  .tree { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 11.5px; line-height: 1.5; }
+  .tree .dir { font-weight: 700; color: var(--navy); margin-top: 7px; }
+  .tree .dir:first-child { margin-top: 0; }
+  .tree .f { padding-left: 14px; position: relative; color: var(--ink); word-break: break-all; margin-top: 2px; }
+  .tree .f::before { content: "└"; position: absolute; left: 1px; color: #b3b9c5; }
+  .tree .kind { display: inline-block; font-size: 10px; font-weight: 700; border-radius: 4px; padding: 0 5px; margin-left: 4px; vertical-align: 1px; }
+  .k-min { background: var(--in-bg); color: var(--in-ink); }
+  .k-pro { background: var(--gen-bg); color: var(--gen-ink); }
+  .k-qa  { background: var(--sort-bg); color: var(--sort-ink); }
+  .k-log { background: var(--ai-bg); color: var(--ai-ink); }
+  .tree .here { background: var(--out-bg); border: 1px solid var(--out-bd); border-radius: 6px; padding: 3px 8px 3px 22px; margin-top: 8px; font-weight: 700; color: var(--out-ink); }
+  .tree .here::before { left: 8px; color: var(--out-ink); }
+  .side .src { margin-top: 12px; font-size: 11.5px; color: var(--sub); line-height: 1.6; }
+  .side .src b { color: var(--ink); }
+  .footer { margin-top: 8px; font-size: 11px; line-height: 1.6; color: var(--ink); background: #fff; border: 1px dashed #c9d0dc; border-radius: 8px; padding: 8px 11px; word-break: break-all; }
+</style>
+
+<div class="eyebrow">SAMPLE ／ 架空のクライアント「サンプル商事」の2026年9月</div>
+<h1>月次レポート：1か月の記録から、送れる報告書の下書きへ</h1>
+<p class="lead">議事録・提案書・相談記録・稼働ログを <b>/monthly</b> がまとめて月次レポートにする。書けない所は「要確認」のまま残る。</p>
+
+<div class="wrap">
+  <div class="desk">
+    <div class="paper">
+      <div class="fname">2026-09/report.md</div>
+      <h2>月次レポート サンプル商事 2026-09</h2>
+
+      <h3>今月の稼働サマリー</h3>
+      <p>今月の対応は合計5件、1時間45分（推定）です。提案は3件です。</p>
+      <table>
+        <tr><th>区分</th><th>件数</th><th>推定時間</th></tr>
+        <tr><td>会議</td><td class="n">2件</td><td>1時間18分（推定）</td></tr>
+        <tr><td>チャット相談</td><td class="n">2件</td><td>22分（推定）</td></tr>
+        <tr><td>メール</td><td class="n">0通</td><td>0分（推定）</td></tr>
+        <tr><td>資料</td><td class="n">0件</td><td>0分（推定）</td></tr>
+        <tr><td>メモ</td><td class="n">1件</td><td>5分（推定）</td></tr>
+        <tr class="total"><td>合計</td><td class="n">5件</td><td>1時間45分（推定）</td></tr>
+        <tr><td>提案</td><td class="n">3件</td><td>―</td></tr>
+      </table>
+      <p class="note">※ 時間はメッセージ数・録音の長さから機械的に算出した推定値です（実際の作業時間ではありません）。</p>
+
+      <h3>会議の要点</h3>
+      <div class="mtg">9/3 月次定例</div>
+      <ul>
+        <li>発注点による発注を、来月から上位の品目で試す。担当者へは佐藤部長から話す</li>
+        <li>季節商品は発注点とは別に考える。整理は次回以降</li>
+        <li>次回の定例は17日</li>
+      </ul>
+      <div class="mtg">9/17 月次定例2回目</div>
+      <ul>
+        <li>10月1日から、納期がそろった5社分の品目で発注点の運用を始める</li>
+        <li>最初の2週間は、発注した日と数量を今の発注表に列を足して記録する</li>
+        <li>動いていない在庫の洗い出しは、25日の棚卸しで出す</li>
+        <li>次回は来月の頭。日程は Slack で相談する</li>
+      </ul>
+
+      <h3>提案と進捗</h3>
+      <ul>
+        <li><b>上位20品目の発注点設定</b>（9/3）: 在庫が発注点を下回ったら発注する形に変える。発注点は出荷量と納期から計算し、上位20品目程度から始める
+          <ul><li>進捗: 出荷数3か月分を受領し、計算表のたたき台を9/17に確認。納期一覧は8社中5社分がそろい、10月1日から5社分の品目で運用開始を決定</li></ul></li>
+        <li><b>動いていない在庫の洗い出し</b>（9/3）: 品目ごとの最終出荷日を出し、処分するものと残すものを分ける
+          <ul><li>進捗: 25日の棚卸しで洗い出しを行う予定（9/17決定）</li></ul></li>
+        <li><b>季節商品のシーズン前計画</b>（9/3）: 季節商品は発注点ではなく、シーズン前にまとめて計画を立てる
+          <ul><li>進捗：<mark>要確認</mark>（次回以降に整理）</li></ul></li>
+      </ul>
+      <h3>相談対応</h3>
+      <p>Slack でのご相談は2件です。</p>
+      <ul>
+        <li>季節商品の在庫の置き場所（9/8）: 定番色は店舗、売れ行きの読みにくいものは倉庫にまとめる形をご提案。定番色を店舗に寄せた結果、欠品が減ったとのご報告あり（9/12）</li>
+        <li>出荷数データの期間（9/12）: 3か月分で問題なく、週ごとに分かれているとなおよいと回答。データは9/17までに受領</li>
+      </ul>
+      <div class="more">…</div>
+    </div>
+  </div>
+
+  <aside class="side">
+    <h2>同じ月にできたファイル</h2>
+    <div class="cap">01_clients/サンプル商事/2026-09/</div>
+    <div class="tree">
+      <div class="dir">worklog.md <span class="kind k-log">稼働ログ</span></div>
+      <div class="dir">minutes/ <span class="kind k-min">議事録 2件</span></div>
+      <div class="f">2026-09-03_月次定例.md</div>
+      <div class="f">2026-09-17_月次定例2回目.md</div>
+      <div class="dir">proposals/ <span class="kind k-pro">提案書 3件</span></div>
+      <div class="f">2026-09-03_上位20品目の発注点設定.md</div>
+      <div class="f">2026-09-03_動いていない在庫の洗い出し.md</div>
+      <div class="f">2026-09-03_季節商品のシーズン前計画.md</div>
+      <div class="dir">qa/ <span class="kind k-qa">相談記録 2件</span></div>
+      <div class="f">2026-09-08_季節商品の在庫の置き場所.md</div>
+      <div class="f">2026-09-12_出荷数データの期間.md</div>
+      <div class="dir">ads/ <span class="kind k-log" style="background:var(--out-bg);color:var(--out-ink)">広告</span></div>
+      <div class="f" style="word-break:normal">サンプル商事_2026-09_<br>広告運用レポート.pptx ほか</div>
+      <div class="f here">report.md（左の文書）</div>
+    </div>
+    <p class="src"><b>レポートの元になった記録</b><br>worklog・議事録2・提案書3・相談記録2 の8ファイルと _profile.md。frontmatter の sources: に全部並び、末尾にも同じリンクが付く（原文）:</p>
+    <div class="footer">本資料は以下の記録から作成: [[worklog]] / [[2026-09-03_月次定例]] / [[2026-09-17_月次定例2回目]] / [[2026-09-03_上位20品目の発注点設定]] / [[2026-09-03_動いていない在庫の洗い出し]] / [[2026-09-03_季節商品のシーズン前計画]] / [[2026-09-08_季節商品の在庫の置き場所]] / [[2026-09-12_出荷数データの期間]] / [[_profile]]</div>
+  </aside>
+</div>

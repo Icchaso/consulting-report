@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sec { margin-top: 22px; }
+  .sec-t { font-size: 13px; font-weight: 800; color: var(--navy); margin-bottom: 10px; display: flex; align-items: baseline; gap: 10px; }
+  .sec-t small { font-weight: 500; font-size: 11.5px; color: var(--sub); }
+  .tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .tile { border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 12px 11px; background: #fff; }
+  .tile .n { font-size: 30px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -.01em; }
+  .tile .n span { font-size: 14px; font-weight: 700; margin-left: 2px; }
+  .tile .l { font-size: 12.5px; font-weight: 700; margin-top: 4px; }
+  .tile .s { font-size: 10.5px; color: var(--sub); margin-top: 2px; line-height: 1.4; }
+  .tile.hero { grid-column: span 2; background: var(--navy); border-color: var(--navy); color: #fff; }
+  .tile.hero .n, .tile.hero .l { color: #fff; }
+  .tile.hero .s { color: #c9d4ea; }
+  .tile.hero .n { font-size: 40px; }
+  .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .v { border-radius: 12px; padding: 13px 13px; background: var(--panel); border-top: 4px solid var(--accent); }
+  .v .ic { font-size: 22px; }
+  .v b { display: block; font-size: 14.5px; margin: 6px 0 5px; line-height: 1.4; color: var(--navy); }
+  .v p { font-size: 12px; color: var(--sub); line-height: 1.55; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+  th { font-size: 12px; font-weight: 800; text-align: left; padding: 8px 12px; }
+  th.b { background: #eef0f3; color: var(--sub); border-radius: 10px 0 0 0; }
+  th.a { background: var(--navy); color: #fff; border-radius: 0 10px 0 0; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.b { color: var(--sub); width: 44%; }
+  td.x { width: 4%; color: #9aa3b2; text-align: center; font-weight: 800; }
+  td.a { font-weight: 600; }
+  td.a code { font-family: "SF Mono", Menlo, monospace; font-size: 11.5px; background: var(--panel); border-radius: 4px; padding: 1px 5px; }
+</style>
+
+<div class="eyebrow">OUTCOMES</div>
+<h1>どんな成果が上がる？</h1>
+<p class="lead">架空のクライアント1社・1か月分のサンプル（会議2回・Slack 2日分・メモ1件・広告27本×30日）を入れて、実際にできたもの。</p>
+
+<div class="sec">
+  <div class="sec-t">サンプル1社・1か月で手元に残ったもの<small>数字はサンプルを実際に流した結果</small></div>
+  <div class="tiles">
+    <div class="tile hero"><div class="n">82<span>枚</span></div><div class="l">広告運用レポート（PowerPoint）</div><div class="s">グラフ107個・所見53枠のうち40枠を記入／根拠の無い13枠は「要確認」</div></div>
+    <div class="tile"><div class="n">2<span>本</span></div><div class="l">議事録</div><div class="s">発言の時刻つき</div></div>
+    <div class="tile"><div class="n">3<span>本</span></div><div class="l">提案書</div><div class="s">口頭で出た提案から</div></div>
+    <div class="tile"><div class="n">2<span>件</span></div><div class="l">Q&amp;A 記録</div><div class="s">Slack の相談から</div></div>
+    <div class="tile"><div class="n">1<span>本</span></div><div class="l">月次レポート</div><div class="s">稼働ログ（5件）つき</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-t">仕事がどう変わるか</div>
+  <div class="values">
+    <div class="v"><div class="ic">💡</div><b>口頭の提案が<br>「成果物」になる</b><p>会議やチャットで話しただけの提案が、提案書として残る。月次レポートの「提案と進捗」にも並ぶ。</p></div>
+    <div class="v"><div class="ic">📑</div><b>資料づくりが<br>「レビュー」に変わる</b><p>数十枚のパワポを1から作る代わりに、たたき台を確認して直す。ページ構成・グラフ・表は毎月同じ型で揃う。</p></div>
+    <div class="v"><div class="ic">🔢</div><b>数字を<br>安心して出せる</b><p>数字はすべて CSV からプログラムが計算。AI は数字を書かない。各ページのノート欄に数字の出どころが残る。</p></div>
+    <div class="v"><div class="ic">⏱️</div><b>仕事の量が<br>「見える」</b><p>何に何分使ったかを月末に自動で集計（録音の長さ・メッセージ数からの推定）。報告の裏づけになる。</p></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-t">これまで と これから</div>
+  <table>
+    <tr><th class="b">これまで</th><th style="background:#eef0f3"></th><th class="a">これから</th></tr>
+    <tr><td class="b">会議の中身は、記憶と手書きメモ頼み</td><td class="x">→</td><td class="a">録音を置けば、発言の時刻つきの議事録ができる</td></tr>
+    <tr><td class="b">口頭で出した提案は、形に残らない</td><td class="x">→</td><td class="a">提案書として残り、翌月以降の進捗も追える</td></tr>
+    <tr><td class="b">報告用のパワポを、毎月手作業で作る</td><td class="x">→</td><td class="a">CSV を置いて <code>/ad-report</code> で60〜90枚のたたき台</td></tr>
+    <tr><td class="b">数字の転記・計算を、手で見直す</td><td class="x">→</td><td class="a">プログラムが計算し、検査で「文章への数字の混入」も自動で見つける</td></tr>
+    <tr><td class="b">何にどれだけ時間を使ったか、はっきりしない</td><td class="x">→</td><td class="a">稼働ログで、会議・相談・資料づくりの時間を月ごとに集計</td></tr>
+  </table>
+</div>

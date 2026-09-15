@@ -26,7 +26,7 @@
 - [ ] **いっちゃん判断**: 納品形式（pptx / Googleスライド / PDF）、会社テンプレートの有無
 - [x] GitHub: https://github.com/Icchaso/consulting-report （Private）に push（2026-09-15, d10c352）。ルートの .gitignore で実データ（01_clients のサンプル2社以外・00_inbox・04_logs・.env）を除外済み
 - [ ] 三好さんをコラボレーターに招待（**三好さんの GitHub ユーザー名待ち**）
-- [ ] いっちゃんが抜けるとき: Settings → Transfer ownership で三好さんへ移管（三好さんは1日以内に承認）→ 自動でコラボレーターになるので自分を外す
+- [ ] いっちゃんが抜けるとき: Settings → Transfer ownership で三好さんへ移管（三好さんは1日以内に承認）→ 自動でコラボレーターになるので自分を外す。移管後に README の `git clone` の URL を新しい持ち主に書き換える（旧URLも自動転送はされる）
 - [ ] サンプルの記録（在庫の話）を広告運用コンサルの会議内容に差し替え、広告レポートの次月施策とつながるデモにする
 - [ ] 実データでの検証: 広告マネージャの実エクスポートで列名を確定（column_map.json）
 - [ ] 設計書 STEP6（LINE / Gmail 取り込み、定時実行、通知、Meta Marketing API 連携）は運用が回ってから

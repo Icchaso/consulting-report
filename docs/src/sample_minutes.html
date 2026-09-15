@@ -1,0 +1,107 @@
+<!-- README 用：録音の文字起こし（raw）と、/monthly が作った議事録の見比べ。本文はすべて実物ファイルからの原文引用 -->
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  .cols { display: grid; grid-template-columns: 380px 92px 1fr; align-items: stretch; margin-top: 20px; }
+  .panel { border-radius: 12px; padding: 16px 18px 14px; }
+  .panel h2 { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+  .panel .src { font-size: 11px; color: var(--sub); margin-bottom: 12px; word-break: break-all; }
+  .raw { background: var(--panel); border: 1px solid var(--line); }
+  .raw h2 { color: var(--sub); }
+  .utt { margin-bottom: 8px; font-size: 12px; line-height: 1.5; }
+  .utt .ts { display: block; font-family: "SF Mono", Menlo, monospace; font-size: 10.5px; color: #8a92a3; }
+  .utt .who { font-weight: 700; }
+  .gap { text-align: center; color: #b3b9c5; font-size: 11px; margin: -3px 0 6px; letter-spacing: .3em; }
+  .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+  .arrow .cmd { font-family: "SF Mono", Menlo, monospace; font-size: 12px; font-weight: 700; color: #fff; background: var(--navy); border-radius: 6px; padding: 3px 6px; }
+  .arrow svg { display: block; }
+  .doc { background: #fff; border: 1px solid var(--line); box-shadow: 0 3px 14px rgba(27,36,56,.10); }
+  .doc h2 { color: var(--navy); }
+  .doc h3 { font-size: 13px; font-weight: 800; color: var(--navy); margin: 12px 0 5px; padding-left: 8px; border-left: 3px solid var(--accent); line-height: 1.3; }
+  .doc h3:first-of-type { margin-top: 4px; }
+  .doc ul { list-style: none; }
+  .doc li { position: relative; padding-left: 13px; font-size: 12.5px; line-height: 1.6; margin-bottom: 4px; }
+  .doc li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 5px; height: 5px; border-radius: 50%; background: #9aa3b5; }
+  .chip { display: inline-block; font-family: "SF Mono", Menlo, monospace; font-size: 10.5px; font-weight: 600; color: var(--in-ink); background: var(--in-bg); border: 1px solid var(--in-bd); border-radius: 5px; padding: 0 4px; line-height: 1.45; margin: 0 1px; }
+  mark { background: linear-gradient(transparent 45%, #ffe27a 45%); color: inherit; font-weight: 700; padding: 0 1px; }
+  .omit { font-size: 11px; color: var(--sub); margin-top: 2px; }
+  .notes { display: flex; gap: 12px; margin-top: 16px; }
+  .note { flex: 1; font-size: 12.5px; background: var(--panel); border-radius: 10px; padding: 9px 13px; color: var(--ink); }
+  .note b { color: var(--navy); }
+</style>
+
+<div class="eyebrow">SAMPLE ／ 架空のクライアント「サンプル商事」の月次定例（50分）</div>
+<h1>議事録：口頭で終わっていた提案が、根拠つきの記録になる</h1>
+
+<div class="cols">
+  <!-- 左：元の記録 -->
+  <section class="panel raw">
+    <h2>元の記録（録音の文字起こし）</h2>
+    <div class="src">raw/2026-09-03_meeting_サンプル商事_月次定例.md より抜粋</div>
+
+    <div class="utt"><span class="ts">[00:08:40.000 --> 00:09:05.600]</span><span class="who">山田:</span> ありがとうございます。そこで一つご提案なんですが、主力の品目から発注点を決めて、在庫がそこを下回ったら発注する形に変えてみませんか。</div>
+    <div class="utt"><span class="ts">[00:12:31.000 --> 00:12:52.400]</span><span class="who">山田:</span> 売上の大きい順に並べて、上から20品目くらいでまず試すのがいいと思います。</div>
+    <div class="utt"><span class="ts">[00:20:05.000 --> 00:20:28.000]</span><span class="who">山田:</span> もう一点、季節商品は発注点ではなく、シーズン前にまとめて計画を立てる方が合うと思います。こちらは次回以降に整理しましょう。</div>
+    <div class="utt"><span class="ts">[00:24:34.000 --> 00:24:58.900]</span><span class="who">山田:</span> 滞留している分がすぐ減るわけではないので、並行して動いていない在庫の洗い出しも必要です。どれくらい減るかは、数字を見てから試算させてください。</div>
+    <div class="utt"><span class="ts">[00:33:05.000 --> 00:33:22.400]</span><span class="who">佐藤:</span> 棚卸しは毎月25日なので、そのときに合わせて出せると思います。</div>
+    <div class="utt"><span class="ts">[00:36:00.000 --> 00:36:20.100]</span><span class="who">山田:</span> それで大丈夫です。では整理すると、上位20品目で発注点を設定する件と、動いていない在庫の洗い出しの2つですね。</div>
+    <div class="utt"><span class="ts">[00:36:21.000 --> 00:36:47.500]</span><span class="who">佐藤:</span> 発注点の件は、来月から上位の品目で試してみます。担当にも私から話しておきます。</div>
+    <div class="utt"><span class="ts">[00:40:10.000 --> 00:40:35.800]</span><span class="who">山田:</span> 宿題を確認させてください。御社側は、上位20品目の直近3か月の出荷数と、仕入先ごとの納期の一覧をいただけますか。</div>
+    <div class="utt"><span class="ts">[00:40:36.000 --> 00:40:48.300]</span><span class="who">佐藤:</span> 出荷数は来週中に出せます。納期の一覧は購買に確認してからになります。</div>
+    <div class="utt"><span class="ts">[00:40:49.000 --> 00:41:10.600]</span><span class="who">山田:</span> 私の方は、いただいたデータで発注点の計算表のたたき台を作ってお送りします。</div>
+  </section>
+
+  <!-- 中央：矢印 -->
+  <div class="arrow">
+    <span class="cmd">/monthly</span>
+    <svg width="44" height="26" viewBox="0 0 44 26" aria-hidden="true"><path d="M2 13h34" stroke="#1f3a68" stroke-width="3.5" stroke-linecap="round"/><path d="M28 4l11 9-11 9" fill="none" stroke="#1f3a68" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <!-- 右：自動でできた議事録 -->
+  <section class="panel doc" id="doc">
+    <h2>自動でできた議事録</h2>
+    <div class="src">2026-09/minutes/2026-09-03_月次定例.md より抜粋</div>
+
+    <h3>決定事項</h3>
+    <ul>
+      <li>発注点による発注を、来月から上位の品目で試す。担当者へは佐藤部長から話す [00:36:21]（山田が「上位20品目で発注点を設定する件」と整理 [00:36:00]）</li>
+      <li>季節商品は発注点とは別に考える。整理は次回以降 [00:20:05]〜[00:20:28]</li>
+      <li>次回の定例は17日 [00:44:52]〜[00:45:09]</li>
+    </ul>
+
+    <h3>提案した内容（発言ベース）</h3>
+    <ul>
+      <li>主力の品目から発注点を決め、在庫がそこを下回ったら発注する形に変える [00:08:40]</li>
+      <li>売上の大きい順に、上から20品目くらいでまず試す [00:12:31]</li>
+      <li>滞留分はすぐには減らないため、動いていない在庫の洗い出しも並行して行う。どれくらい減るかは数字を見てから試算する [00:24:34]</li>
+    </ul>
+
+    <h3>宿題・次回まで</h3>
+    <ul>
+      <li>御社（佐藤部長）: 上位20品目の直近3か月の出荷数を送る。期限は来週中 [00:40:10]〜[00:40:36]</li>
+      <li>御社（佐藤部長）: 仕入先ごとの納期の一覧を送る。購買に確認してから。期限は要確認 [00:40:36]</li>
+      <li>山田: いただいたデータで発注点の計算表のたたき台を作って送る。期限は要確認（次回17日に一緒に見たいとの発言あり [00:44:52]）</li>
+    </ul>
+
+    <h3>未確定・要確認</h3>
+    <ul>
+      <li>動いていない在庫の洗い出しの実施時期: 「棚卸しは毎月25日なので、そのときに合わせて出せると思います」との発言のみ [00:33:05]。確定の発言はなし（要確認）</li>
+      <li>洗い出しで在庫がどれくらい減るか: 数字を見てから試算 [00:24:34]（要試算）</li>
+    </ul>
+  </section>
+</div>
+
+<div class="notes">
+  <div class="note"><b>議事録の各行には元の発言の時刻が付く。</b>青い時刻をたどれば、左の文字起こしのどの発言が根拠か確かめられる。</div>
+  <div class="note"><b>見込みの発言は決定事項に入れず「未確定・要確認」に分ける。</b>「出せると思います」は決定ではないので、黄色の要確認として残る。</div>
+</div>
+
+<script>
+  // 右の議事録だけ、時刻 [hh:mm:ss] を青いチップに、「要確認」「要試算」を黄色マーカーにする（文字そのものは変えない）
+  const doc = document.getElementById('doc');
+  doc.querySelectorAll('li').forEach(li => {
+    li.innerHTML = li.innerHTML
+      .replace(/\[(\d{2}:\d{2}:\d{2})\]/g, '<span class="chip">[$1]</span>')
+      .replace(/(要確認|要試算)/g, '<mark>$1</mark>');
+  });
+</script>
