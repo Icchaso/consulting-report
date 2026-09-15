@@ -1,0 +1,16 @@
+{
+  "_説明": "inbox_sort.py の設定。estimate は raw の estimated_minutes（所要時間の推定）を出すときの係数。値を変えると次回以降に振り分ける分から反映される（振り分け済みの raw は書き換えない）。先頭が _ のキーは説明用で、スクリプトは読まない。",
+  "timezone": "Asia/Tokyo",
+  "_timezone_説明": "Slack エクスポートの投稿時刻をこのタイムゾーンで表示する",
+  "estimate": {
+    "meeting_chars_per_minute": 300,
+    "_meeting_説明": "会議でタイムスタンプが取れないとき、本文の文字数（空白・改行を除く）をこの値で割って切り上げた分数にする",
+    "chat_minutes_per_message": 2,
+    "chat_min_minutes": 10,
+    "_chat_説明": "slack / line は メッセージ数 × chat_minutes_per_message 分。ただし最低 chat_min_minutes 分",
+    "mail_minutes": 10,
+    "doc_minutes": 30,
+    "memo_minutes": 5,
+    "_固定値_説明": "mail / doc / memo は1ファイルあたりの固定の分数"
+  }
+}

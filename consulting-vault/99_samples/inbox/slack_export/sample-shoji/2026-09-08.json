@@ -1,0 +1,60 @@
+[
+  {
+    "type": "message",
+    "user": "U03TANAKA",
+    "text": "<@U03TANAKA> has joined the channel",
+    "ts": "1788825720.100000",
+    "subtype": "channel_join"
+  },
+  {
+    "type": "message",
+    "user": "U02SATO",
+    "text": "<@U01YAMADA> さん、在庫の持ち方で相談です。季節商品の在庫を、倉庫とお店のどちらに多く置くべきか迷っています。",
+    "ts": "1788830100.100000",
+    "thread_ts": "1788830100.100000",
+    "reply_count": 2,
+    "reply_users": [
+      "U01YAMADA",
+      "U02SATO"
+    ],
+    "replies": [
+      {
+        "user": "U01YAMADA",
+        "ts": "1788831600.100000"
+      },
+      {
+        "user": "U02SATO",
+        "ts": "1788833100.100000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U01YAMADA",
+    "text": "ご相談ありがとうございます。売れ行きの読みやすい定番色は店舗、読みにくいものは倉庫にまとめて置き、売れ行きを見て店舗に回す形がおすすめです。\nまずは定番色だけ店舗に寄せて、2週間ほど様子を見るのはいかがでしょうか。",
+    "ts": "1788831600.100000",
+    "thread_ts": "1788830100.100000",
+    "parent_user_id": "U02SATO"
+  },
+  {
+    "type": "message",
+    "user": "U02SATO",
+    "text": "なるほど、まず定番色から店舗に寄せてみます。",
+    "ts": "1788833100.100000",
+    "thread_ts": "1788830100.100000",
+    "parent_user_id": "U02SATO"
+  },
+  {
+    "type": "message",
+    "user": "U03TANAKA",
+    "text": "倉庫の棚番号の一覧を共有します。&lt;品番&gt; ごとに並べています。",
+    "ts": "1788845400.100000",
+    "files": [
+      {
+        "id": "F01",
+        "name": "棚番号一覧.xlsx",
+        "title": "棚番号一覧"
+      }
+    ]
+  }
+]

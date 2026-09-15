@@ -1,0 +1,106 @@
+{
+  "_説明": "build_deck.py の設定。--config で別ファイルを渡すと、この既定値に上書きで重ねる（書いたキーだけ変わる）。sections の並び順がスライドの順番。enabled: false でそのセクションを出さない。先頭が _ のキーは説明用で、スクリプトは読まない。",
+  "font": {
+    "latin": "游ゴシック",
+    "east_asian": "游ゴシック",
+    "_説明": "latin=英数字のフォント、east_asian=日本語のフォント（a:ea に入れる）。Windows の PowerPoint では「游ゴシック」、Mac では「游ゴシック体」に置き換わって表示される。",
+    "title_pt": 22,
+    "body_pt": 12,
+    "table_pt": 10,
+    "small_pt": 9
+  },
+  "colors": {
+    "_説明": "16進のRGB（# なし）。series はグラフの系列の色の順番。",
+    "primary": "1F3864",
+    "accent": "2E75B6",
+    "accent_light": "EAF1FA",
+    "text": "262626",
+    "subtext": "6B6B6B",
+    "border": "D9DDE3",
+    "bg_light": "F5F7FA",
+    "table_header": "1F3864",
+    "table_band": "F5F7FA",
+    "good": "2E7D32",
+    "bad": "C62828",
+    "warn_fill": "FFF4E5",
+    "warn_border": "E08A1E",
+    "warn_text": "B35C00",
+    "series": ["1F3864", "2E75B6", "9DC3E6", "C55A11", "70AD47", "7F7F7F", "FFC000", "A5A5A5"]
+  },
+  "sections": [
+    {"id": "cover"},
+    {"id": "toc"},
+    {"id": "summary", "group": "overview"},
+    {"id": "targets", "group": "overview"},
+    {"id": "mom", "group": "overview"},
+    {"id": "measurement_notes", "group": "overview"},
+    {"id": "daily", "group": "overview"},
+    {"id": "weekly", "group": "overview"},
+    {"id": "campaign_compare", "group": "campaign"},
+    {"id": "campaigns", "group": "campaign"},
+    {"id": "adsets", "group": "adset"},
+    {"id": "ads", "group": "creative"},
+    {"id": "ranking", "group": "creative"},
+    {"id": "age_gender", "group": "audience"},
+    {"id": "placement", "group": "audience"},
+    {"id": "device", "group": "audience"},
+    {"id": "region", "group": "audience"},
+    {"id": "issues", "group": "wrapup"},
+    {"id": "next_actions", "group": "wrapup"},
+    {"id": "appendix", "group": "appendix"},
+    {"id": "glossary", "group": "appendix"}
+  ],
+  "groups": {
+    "overview": "全体サマリー",
+    "campaign": "キャンペーン",
+    "adset": "広告セット",
+    "creative": "クリエイティブ",
+    "audience": "オーディエンス・配信面",
+    "wrapup": "所見と次月施策",
+    "appendix": "Appendix"
+  },
+  "section_dividers": true,
+  "rows_per_page": {
+    "_説明": "表の1ページあたりの最大行数（名前が長くて入りきらない場合は自動で減らす）",
+    "default": 14,
+    "daily_table": 16,
+    "appendix": 15,
+    "breakdown": 18
+  },
+  "ads": {
+    "_説明": "広告（クリエイティブ）ごとのスライドの上限。超えた分は消化金額の多い順に選び、残りは Appendix の明細表にだけ載る",
+    "max_slides": 40
+  },
+  "ranking": {"top_n": 5, "spend_top_n": 10},
+  "breakdown_chart_top_n": 10,
+  "kpi_cards": {
+    "summary": ["spend", "cv", "cpa", "roas", "impressions", "ctr", "cpc", "cpm"],
+    "campaign": ["spend", "cv", "cpa", "roas", "ctr", "cpm", "reach", "frequency"],
+    "adset": ["spend", "cv", "cpa", "roas", "ctr", "cpc"],
+    "ad": ["spend", "impressions", "ctr", "cpc", "cv", "cvr", "cpa", "roas"]
+  },
+  "appendix": {
+    "_説明": "ad_daily: true で「広告×日」の全明細表も入れる（サンプルでは約45ページ増える）",
+    "ad_daily": false
+  },
+  "cover": {
+    "title": "Meta広告 運用レポート",
+    "subtitle": "Facebook / Instagram 広告",
+    "author": ""
+  },
+  "footer": "{client} 様｜{month_label} 広告運用レポート",
+  "measurement_notes": [
+    {
+      "date": "2026-01-12",
+      "text": "2026年1月12日から、Meta の広告データ（Ads Insights API）でビュースルー（広告の表示後）7日間・28日間のアトリビューションウィンドウの値が提供されなくなりました（1日間のビュー、1日・7日・28日間のクリック等は継続）。変更日をまたいで比べると、コンバージョン数に段差が出ることがあります。",
+      "source": "Meta for Developers「Ads Insights API Metric Availability Updates」",
+      "url": "https://developers.facebook.com/blog/post/2025/10/16/ads-insights-api-metric-availability-updates/"
+    },
+    {
+      "date": "2026-03-03",
+      "text": "2026年3月（3月3日告知・同月後半から順次）以降、ウェブサイト・店舗のコンバージョンに最適化したキャンペーンでは、クリックスルーのアトリビューションが「リンクのクリック」後のコンバージョンだけになりました（いいね・シェア等のクリック後の分は別区分に移動）。変更日をまたぐ前月比では、クリック経由のコンバージョン数に段差が出ることがあります。",
+      "source": "Meta for Business「Simplifying Ad Measurement for a Social-First World」",
+      "url": "https://www.facebook.com/business/news/click-attribution"
+    }
+  ]
+}

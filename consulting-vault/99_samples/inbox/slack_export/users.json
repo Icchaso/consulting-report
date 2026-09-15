@@ -1,0 +1,33 @@
+[
+  {
+    "id": "U01YAMADA",
+    "name": "yamada",
+    "real_name": "山田",
+    "profile": {
+      "real_name": "山田",
+      "display_name": "やまだ"
+    }
+  },
+  {
+    "id": "U02SATO",
+    "name": "sato",
+    "real_name": "",
+    "profile": {
+      "real_name": "",
+      "display_name": "佐藤 部長"
+    }
+  },
+  {
+    "id": "U03TANAKA",
+    "name": "tanaka-sample",
+    "profile": {}
+  },
+  {
+    "id": "U04RANDOM",
+    "name": "someone",
+    "real_name": "雑談メンバー",
+    "profile": {
+      "real_name": "雑談メンバー"
+    }
+  }
+]

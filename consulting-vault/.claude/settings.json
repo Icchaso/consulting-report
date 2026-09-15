@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 03_scripts/inbox_sort.py:*)",
+      "Bash(python3 03_scripts/worklog.py:*)",
+      "Bash(python3 03_scripts/check_sources.py:*)",
+      "Bash(python3 03_scripts/ad_report/ad_analyze.py:*)",
+      "Bash(python3 03_scripts/ad_report/build_deck.py:*)",
+      "Bash(python3 03_scripts/ad_report/check_deck.py:*)"
+    ],
+    "ask": [
+      "Bash(python3 03_scripts/send_log.py:*)"
+    ],
+    "deny": [
+      "Edit(01_clients/*/raw/**)",
+      "Edit(01_clients/*/ads/**)",
+      "Edit(01_clients/*/*/sent/**)",
+      "Edit(00_inbox/**)",
+      "Read(./.env)",
+      "Read(**/.env)",
+      "Bash(git push:*)",
+      "Bash(git remote add:*)",
+      "Bash(rm:*)"
+    ]
+  }
+}

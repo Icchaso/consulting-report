@@ -1,0 +1,35 @@
+[
+  {
+    "id": "C01SAMPLE",
+    "name": "sample-shoji",
+    "created": 1788000000,
+    "creator": "U01YAMADA",
+    "members": [
+      "U01YAMADA",
+      "U02SATO",
+      "U03TANAKA"
+    ],
+    "topic": {
+      "value": "サンプル商事さんとの相談用"
+    },
+    "purpose": {
+      "value": ""
+    }
+  },
+  {
+    "id": "C02RANDOM",
+    "name": "random",
+    "created": 1788000000,
+    "creator": "U01YAMADA",
+    "members": [
+      "U01YAMADA",
+      "U04RANDOM"
+    ],
+    "topic": {
+      "value": ""
+    },
+    "purpose": {
+      "value": "雑談"
+    }
+  }
+]

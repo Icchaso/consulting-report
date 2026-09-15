@@ -1,0 +1,6 @@
+# 広告レポート（03_scripts/ad_report/）で使う追加パッケージ
+# ad_analyze.py / check_deck.py は標準ライブラリのみで動く。PPTX を作る build_deck.py だけ python-pptx が必要。
+# 入れ方: pip3 install -r 03_scripts/ad_report/requirements.txt
+python-pptx>=1.0.2
+# 任意: 広告マネージャのエクスポートを xlsx のまま読みたい場合だけ（無ければ CSV で書き出す）
+# openpyxl>=3.1

@@ -1,0 +1,26 @@
+# OS・Python の生成物
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# シークレット
+.env
+.env.*
+
+# ---- 実運用のデータは Git に入れない ----
+# クライアントの記録・広告データは 01_clients/ に入る。架空サンプルの2社だけ含める。
+# 新しいクライアントのフォルダを作っても、自動で Git の対象外になる。
+consulting-vault/01_clients/*
+!consulting-vault/01_clients/サンプル商事/
+!consulting-vault/01_clients/テスト工務店/
+
+# 入口・処理ログはフォルダ（.gitkeep）だけ残して中身は入れない
+consulting-vault/00_inbox/**
+!consulting-vault/00_inbox/**/
+!consulting-vault/00_inbox/**/.gitkeep
+consulting-vault/04_logs/**
+!consulting-vault/04_logs/.gitkeep
+
+# Obsidian の個人設定（開いているタブ等）
+consulting-vault/.obsidian/workspace*

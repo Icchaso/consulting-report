@@ -1,0 +1,16 @@
+﻿レポート開始日,レポート終了日,キャンペーン名,インプレッションデバイス,結果,結果インジケーター,リーチ,インプレッション,消化金額 (JPY),リンクのクリック,クリック(すべて),購入,購入のコンバージョン値
+2026-09-01,2026-09-30,新規獲得_コンバージョン,iphone,182,actions:offsite_conversion.fb_pixel_purchase,278776,620919,895726,7751,13926,182,1275764
+2026-09-01,2026-09-30,新規獲得_コンバージョン,android_smartphone,64,actions:offsite_conversion.fb_pixel_purchase,139718,311195,448924,3515,6315,64,447021
+2026-09-01,2026-09-30,新規獲得_コンバージョン,ipad,8,actions:offsite_conversion.fb_pixel_purchase,14897,33180,47864,355,638,8,53121
+2026-09-01,2026-09-30,新規獲得_コンバージョン,android_tablet,3,actions:offsite_conversion.fb_pixel_purchase,7919,17638,25444,178,320,3,18669
+2026-09-01,2026-09-30,新規獲得_コンバージョン,desktop,14,actions:offsite_conversion.fb_pixel_purchase,24050,53566,77274,510,915,14,99101
+2026-09-01,2026-09-30,リターゲティング,iphone,138,actions:offsite_conversion.fb_pixel_purchase,51188,132992,298126,2143,3826,138,1046247
+2026-09-01,2026-09-30,リターゲティング,android_smartphone,53,actions:offsite_conversion.fb_pixel_purchase,28197,73259,164223,1068,1907,53,402929
+2026-09-01,2026-09-30,リターゲティング,ipad,8,actions:offsite_conversion.fb_pixel_purchase,3934,10219,22909,141,252,8,62647
+2026-09-01,2026-09-30,リターゲティング,android_tablet,3,actions:offsite_conversion.fb_pixel_purchase,1885,4898,10981,64,114,3,19852
+2026-09-01,2026-09-30,リターゲティング,desktop,13,actions:offsite_conversion.fb_pixel_purchase,5144,13366,29961,164,293,13,94678
+2026-09-01,2026-09-30,認知_動画,iphone,255267,reach,255267,544851,338953,2461,4425,25,152175
+2026-09-01,2026-09-30,認知_動画,android_smartphone,95163,reach,95163,203119,126361,830,1492,6,39662
+2026-09-01,2026-09-30,認知_動画,ipad,15179,reach,15179,32400,20156,126,226,1,7051
+2026-09-01,2026-09-30,認知_動画,android_tablet,6970,reach,6970,14878,9256,54,98,,2141
+2026-09-01,2026-09-30,認知_動画,desktop,18265,reach,18265,38986,24253,134,241,2,9804

@@ -1,0 +1,54 @@
+[
+  {
+    "type": "message",
+    "user": "U02SATO",
+    "text": "先日の件、定番色を店舗に寄せたら欠品が減りました。",
+    "ts": "1789171200.100000",
+    "thread_ts": "1788830100.100000",
+    "parent_user_id": "U02SATO",
+    "subtype": "thread_broadcast"
+  },
+  {
+    "type": "message",
+    "user": "U02SATO",
+    "text": "上位20品目の出荷数をまとめ始めました。3か月分でいいですか？",
+    "ts": "1789173000.100000",
+    "thread_ts": "1789173000.100000",
+    "reply_count": 1,
+    "reply_users": [
+      "U01YAMADA"
+    ],
+    "replies": [
+      {
+        "user": "U01YAMADA",
+        "ts": "1789173900.100000"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "user": "U01YAMADA",
+    "text": "はい、3か月分で大丈夫です。週ごとに分かれているとなお助かります。",
+    "ts": "1789173900.100000",
+    "thread_ts": "1789173000.100000",
+    "parent_user_id": "U02SATO"
+  },
+  {
+    "type": "message",
+    "user": "U03TANAKA",
+    "text": "<@U02SATO> 購買から仕入先の納期一覧を一部もらいました。",
+    "ts": "1789186200.100000"
+  },
+  {
+    "type": "message",
+    "user": "U02SATO",
+    "text": "ありがとう。<@U01YAMADA> さんにも共有お願いします。",
+    "ts": "1789187100.100000"
+  },
+  {
+    "type": "message",
+    "user": "U01YAMADA",
+    "text": "受け取りました。17日の定例までに計算表に反映します。",
+    "ts": "1789196400.100000"
+  }
+]
