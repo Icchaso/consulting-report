@@ -1,6 +1,6 @@
 # HANDOFF — コンサル業務記録ツール（レポート自動生成）
 
-最終更新: 2026-09-14
+最終更新: 2026-09-15
 
 ## 1. 目的
 メタ広告運用コンサルの業務記録（会議録音・Slack・メモ）と広告データ（広告マネージャのCSV）から、
@@ -16,6 +16,9 @@
   - サンプルで82枚。Quick Look での目視は良好。**PowerPoint / Keynote の実機では未確認**（作業時は画面ロックで Keynote が応答しなかった）
 - 自動テスト: 記録系56件（`/usr/bin/python3` 3.9）＋ 広告系26件（python-pptx が入った python3）すべてパス
 - vault 内の `01_clients/サンプル商事` `テスト工務店` は架空サンプル。入口・生成物もサンプルを流した結果が入っている
+- README に図3枚（全体像 / 1か月の流れ / 成果）と資料サンプル画像3枚（パワポ8ページ抜粋・議事録の見比べ・月次レポート）を掲載。元HTMLは `docs/src/`、画像化は `docs/src/html2png.sh`（Chrome headless）
+- **⚠️ リポジトリは現在 Public**（2026-09-15 いっちゃん指示。「三好さんを招待したら Private に戻す」）。戻すコマンド: `gh repo edit Icchaso/consulting-report --visibility private --accept-visibility-change-consequences`
+  - 公開中に見えるもの（いっちゃん了承済み）: コミット作成者のメール `dicedayo@gmail.com`、HANDOFF 内の「三好さん」表記。秘密情報・実クライアントデータは全履歴を検査してゼロ
 
 ## 3. 次にやること
 - [x] `/ad-report サンプル商事 2026-09` を本物の vault でヘッドレス実行 → 82枚・所見40/53枠・check_deck ERROR 0 / WARN 0（2026-09-14）
@@ -25,7 +28,8 @@
 - [ ] **いっちゃん判断**: 三好さんの実際のレポート（パワポ）の実物 or 目次 → 構成・デザインを寄せる
 - [ ] **いっちゃん判断**: 納品形式（pptx / Googleスライド / PDF）、会社テンプレートの有無
 - [x] GitHub: https://github.com/Icchaso/consulting-report （Private）に push（2026-09-15, d10c352）。ルートの .gitignore で実データ（01_clients のサンプル2社以外・00_inbox・04_logs・.env）を除外済み
-- [ ] 三好さんをコラボレーターに招待（**三好さんの GitHub ユーザー名待ち**）
+- [ ] **三好さんをコラボレーターに招待**（三好さんの GitHub ユーザー名待ち）→ `gh api -X PUT repos/Icchaso/consulting-report/collaborators/<ユーザー名> -f permission=push`
+- [ ] **招待の承認を確認したら Private に戻す**（上記コマンド。招待済みなら非公開でも三好さんは閲覧・編集できる）
 - [ ] いっちゃんが抜けるとき: Settings → Transfer ownership で三好さんへ移管（三好さんは1日以内に承認）→ 自動でコラボレーターになるので自分を外す。移管後に README の `git clone` の URL を新しい持ち主に書き換える（旧URLも自動転送はされる）
 - [ ] サンプルの記録（在庫の話）を広告運用コンサルの会議内容に差し替え、広告レポートの次月施策とつながるデモにする
 - [ ] 実データでの検証: 広告マネージャの実エクスポートで列名を確定（column_map.json）
